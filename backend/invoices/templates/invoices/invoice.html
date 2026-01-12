@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .header { text-align: center; }
+        .section { margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>{{ invoice.business_name }}</h1>
+    <p>{{ invoice.business_email }}</p>
+</div>
+
+<div class="section">
+    <strong>Invoice #:</strong> {{ invoice.invoice_number }}<br>
+    <strong>Date:</strong> {{ invoice.invoice_date }}<br>
+    <strong>Due:</strong> {{ invoice.due_date }}
+</div>
+
+<div class="section">
+    <strong>Bill To:</strong><br>
+    {{ invoice.client_name }}<br>
+    {{ invoice.client_email }}
+</div>
+
+<div class="section">
+    <table>
+        <tr>
+            <th>Subtotal</th>
+            <th>Tax</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>{{ invoice.subtotal }}</td>
+            <td>{{ invoice.tax }}</td>
+            <td>{{ invoice.total }}</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
